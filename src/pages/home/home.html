@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="userData">Welcome {{userData.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="card-background-page">
+
+
+  <ion-searchbar [(ngModel)]="myInput" placeholder="Enter Id" (keyup.enter)="search(myInput)" [showCancelButton]="shouldShowCancel"
+    (ionCancel)="myInput=''">
+  </ion-searchbar>
+  <ion-row>
+    <ion-col col-12 (click)="openPage('http://www.vinodbeloshe.com')">
+      <ion-card>
+        <img src="https://ionicframework.com/dist/preview-app/www/assets/img/card-sf.png" />
+        <div class="card-title">San Francisco</div>
+        <div class="card-subtitle">72 Listings</div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-6>
+      <ion-card (click)="openPage('http://www.susindhufashion.com/')">
+        <img src="https://ionicframework.com/dist/preview-app/www/assets/img/card-saopaolo.png" />
+        <div class="card-title">São Paulo</div>
+        <div class="card-subtitle">41 Listings</div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col col-6>
+      <ion-card>
+        <img src="https://ionicframework.com/dist/preview-app/www/assets/img/card-amsterdam.png" />
+        <div class="card-title">Amsterdam</div>
+        <div class="card-subtitle">64 Listings</div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-6>
+      <ion-card>
+        <img src="https://ionicframework.com/dist/preview-app/www/assets/img/card-sf.png" />
+        <div class="card-title">San Francisco</div>
+        <div class="card-subtitle">72 Listings</div>
+      </ion-card>
+    </ion-col>
+
+    <ion-col col-6>
+      <ion-card>
+        <img src="https://ionicframework.com/dist/preview-app/www/assets/img/card-sf.png" />
+        <div class="card-title">Madison</div>
+        <div class="card-subtitle">28 Listings</div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

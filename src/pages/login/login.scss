@@ -1,0 +1,29 @@
+page-login {
+  .bg {
+    background-color: #fff;
+    background-image: url(../assets/imgs/bg1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .item-ios,
+  .item-md {
+    background: transparent !important;
+  }
+  .loginCont {
+    // position: relative;
+    // top: 50%;
+    // transform: translateY(-50%);
+    // padding: 25% 0 0 0;
+    color: #fff;
+    img {
+      width: 30%;
+      left: 50%;
+      position: relative;
+      transform: translateX(-50%);
+      margin-bottom: 20px;
+    }
+    .button-default {
+      background-color: #140c0a !important;
+    }
+  }
+}

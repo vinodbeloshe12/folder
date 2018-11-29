@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg">
+  <div class="loginCont">
+    <img src="../assets/imgs/logo.png" alt="">
+    <form (ngSubmit)="login(userId)">
+      <ion-item>
+        <ion-label floating>User Id</ion-label>
+        <ion-input name="userid" [(ngModel)]="userId" type="text" required></ion-input>
+      </ion-item>
+      <div padding>
+        <button ion-button type="submit" block>Login</button>
+      </div>
+    </form>
+  </div>
+</ion-content>
