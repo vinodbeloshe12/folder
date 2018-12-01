@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Web View</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <iframe [src]="transform(url)" height="100%" width="100%" frameborder="0"></iframe>
+</ion-content>

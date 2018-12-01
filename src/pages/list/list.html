@@ -3,21 +3,49 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>User List</ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
+<ion-content class="bg">
+  <!-- <div *ngIf="userArr" padding class="tree">
+    <div padding *ngFor="let data of userArr">
+      {{data.name}}({{data.useruserid}})
+      <div padding class="tree">
+        <ion-list *ngFor="let user1 of data.users">
+          {{user1.name}}({{user1.userid}})
+          <div padding class="tree">
+            <ion-list *ngFor="let user2 of user1.users">
+              {{user2.userid}}
+            </ion-list>
+          </div>
+        </ion-list>
       </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
+    </div>
+  </div> -->
+
+
+  <div *ngIf="userArr && userArr.length>0" class="tree">
+    <ul>
+      <li>
+        <a title="{{currentUser.name}}" href="#">{{currentUser.userid}}</a>
+        <ul>
+          <li *ngFor="let data of filterUser">
+            <a title="{{userData.name}}" href="#">{{data.userid}}</a>
+            <ul *ngIf="data.users">
+              <li *ngFor="let user of data.users">
+                <a title="{{userData.name}}" href="#">{{user.userid}}</a>
+                <ul *ngIf="user.users">
+                  <li *ngFor="let user1 of user.users">
+                    <a title="{{userData.name}}" href="#">{{user1.userid}}</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+      </li>
+    </ul>
+
   </div>
 </ion-content>

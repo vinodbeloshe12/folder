@@ -11,13 +11,17 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
+import { UserPage } from '../pages/user/user';
+import { WebviewPage } from '../pages/webview/webview';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    LoginPage
+    UserPage,
+    LoginPage,
+    WebviewPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,9 @@ import { LoginPage } from '../pages/login/login';
     MyApp,
     HomePage,
     ListPage,
-    LoginPage
+    UserPage,
+    LoginPage,
+    WebviewPage
   ],
   providers: [
     StatusBar,

@@ -11,7 +11,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class LoginPage {
   public allContacts: any
-  constructor(private storage: Storage, public navCtrl: NavController, public navParams: NavParams, private http: HttpClient, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient, public toastCtrl: ToastController, private storage: Storage) {
 
   }
 
@@ -19,6 +19,7 @@ export class LoginPage {
     console.log("val", val)
     if (val) {
       let headers = new HttpHeaders();
+      let data = { userId: val }
       headers.append('Content-Type', 'application/json');
       this.http.get("http://admin.findacross.com/index.php/json/mlmLogin?userId=" + val, { headers: headers }).subscribe(data => {
         let userData: any = data;
