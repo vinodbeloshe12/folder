@@ -24,7 +24,7 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private storage: Storage) {
 
-    storage.get('userData').then((val) => {
+    this.storage.get('userData').then((val) => {
       console.log('Your name is', val);
       this.userData = val;
       if (this.userData) {

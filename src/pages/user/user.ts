@@ -9,9 +9,12 @@ import { ToastController } from 'ionic-angular';
 export class UserPage {
   adduser: any;
   user = {
-    userId: Math.floor(Math.random() * 899999 + 100000),
-    name: ''
+    userId: this.randomString(),
+    // userId: Math.floor(Math.random() * 899999 + 100000),
+    name: '',
+    payment: 0
   }
+
   constructor(private http: HttpClient, public toastCtrl: ToastController) { }
 
   showToast(msg: string, position: string) {
@@ -24,6 +27,17 @@ export class UserPage {
     toast.present(toast);
   }
 
+  randomString() {
+    var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZ";
+    var string_length = 8;
+    var randomstring = '';
+    for (var i = 0; i < string_length; i++) {
+      var rnum = Math.floor(Math.random() * chars.length);
+      randomstring += chars.substring(rnum, rnum + 1);
+    }
+    return randomstring;
+  }
+
   createUserSubmit(data) {
     console.log("dddd", data);
     if (data.refId && data.userId && data.name) {
@@ -33,8 +47,9 @@ export class UserPage {
       this.http.post("http://admin.findacross.com/index.php/json/addUser", JSON.stringify(data), { headers: headers }).subscribe(data => {
         console.log('user created: ', data);
         this.user = {
-          userId: Math.floor(Math.random() * 899999 + 100000),
-          name: ''
+          userId: this.randomString(),
+          name: '',
+          payment: 0
         }
       })
     } else {

@@ -19,7 +19,6 @@ export class LoginPage {
     console.log("val", val)
     if (val) {
       let headers = new HttpHeaders();
-      let data = { userId: val }
       headers.append('Content-Type', 'application/json');
       this.http.get("http://admin.findacross.com/index.php/json/mlmLogin?userId=" + val, { headers: headers }).subscribe(data => {
         let userData: any = data;
