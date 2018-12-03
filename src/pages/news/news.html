@@ -1,0 +1,17 @@
+<ion-content *ngIf="newsData && newsData.articles.length>0" padding class="card-background-page">
+
+
+  <ion-card (click)="openPage(data.url)" *ngFor="let data of newsData.articles">
+    <img src="{{data.urlToImage}}" />
+    <ion-card-content>
+      <!-- <ion-card-title>
+        {{data.title}}
+      </ion-card-title> -->
+      <p>
+        <!-- {{data.description}} -->
+        {{data.title}}
+
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

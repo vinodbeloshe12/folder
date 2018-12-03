@@ -1,0 +1,37 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="userData">Welcome {{userData.name}}</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+
+<ion-content *ngIf="addData" padding class="card-background-page">
+
+
+  <ion-searchbar col-12 [(ngModel)]="myInput" placeholder="Enter Id" (keyup.enter)="search(myInput)" [showCancelButton]="shouldShowCancel"
+    (ionCancel)="myInput=''">
+  </ion-searchbar>
+  <ion-row>
+    <ion-col *ngFor="let data of addData" col-12>
+      <ion-card *ngIf="data.type==2" (click)="openPage(data.link)">
+        <img src="http://admin.findacross.com/uploads/{{data.image}}" />
+        <!-- <div class="card-title">San Francisco</div>
+        <div class="card-subtitle">72 Listings</div> -->
+      </ion-card>
+    </ion-col>
+
+
+    <ion-col *ngFor="let data of addData" col-6>
+      <ion-card *ngIf="data.type==1" (click)="openPage(data.link)">
+        <img src="http://admin.findacross.com/uploads/{{data.image}}" />
+        <!-- <div class="card-title">São Paulo</div>
+        <div class="card-subtitle">41 Listings</div> -->
+      </ion-card>
+    </ion-col>
+
+
+  </ion-row>
+</ion-content>

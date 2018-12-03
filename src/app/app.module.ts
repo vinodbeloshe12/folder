@@ -13,6 +13,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { UserPage } from '../pages/user/user';
 import { WebviewPage } from '../pages/webview/webview';
+import { AddsPage } from '../pages/adds/add';
+import { NewsPage } from '../pages/news/news';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { WebviewPage } from '../pages/webview/webview';
     ListPage,
     UserPage,
     LoginPage,
-    WebviewPage
+    WebviewPage,
+    AddsPage,
+    NewsPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,9 @@ import { WebviewPage } from '../pages/webview/webview';
     ListPage,
     UserPage,
     LoginPage,
-    WebviewPage
+    WebviewPage,
+    AddsPage,
+    NewsPage
   ],
   providers: [
     StatusBar,
