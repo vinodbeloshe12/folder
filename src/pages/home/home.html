@@ -8,14 +8,26 @@
 </ion-header>
 
 
-<ion-content padding class="card-background-page">
+<ion-content *ngIf="newsData && newsData.length>0" padding class="card-background-page">
 
-
-
+  <ion-searchbar col-12 [(ngModel)]="myInput" placeholder="Enter Id" (keyup.enter)="search(myInput)" [showCancelButton]="shouldShowCancel"
+    (ionCancel)="myInput=''">
+  </ion-searchbar>
+  <!-- 
   <ion-tabs>
     <ion-tab tabIcon="home" [root]="tab1"></ion-tab>
-    <!-- <ion-tab tabIcon="settings" [root]="tab3"></ion-tab> -->
+   
     <ion-tab tabIcon="link" [root]="tab2"></ion-tab>
-  </ion-tabs>
+  </ion-tabs> -->
+
+  <ion-card *ngFor="let data of newsData" (click)="openPage(data.url)">
+    <img *ngIf="!data.type" src="{{data.urlToImage}}" />
+    <img *ngIf="data.type" src="http://admin.findacross.com/uploads/{{data.image}}" />
+    <ion-card-content *ngIf="!data.type">
+      <p>
+        {{data.title}}
+      </p>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
